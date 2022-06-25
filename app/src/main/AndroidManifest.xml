@@ -14,12 +14,22 @@
         android:theme="@style/Theme.DasDisDuk"
         tools:targetApi="31">
         <activity
-            android:name=".ui.form.RegDamagedLoseKTP"
+            android:name=".ui.form.damagelosekk.RegDamagedLoseKK"
             android:exported="false"
             android:parentActivityName=".ui.main.MainActivity"
-            android:theme="@style/WithActionBar"/>
+            android:theme="@style/WithActionBar" />
         <activity
-            android:name=".ui.form.RegNewKTP"
+            android:name=".ui.form.newkk.RegNewKK"
+            android:exported="false"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/WithActionBar" />
+        <activity
+            android:name=".ui.form.damagedlosektp.RegDamagedLoseKTP"
+            android:exported="false"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:theme="@style/WithActionBar" />
+        <activity
+            android:name=".ui.form.newktp.RegNewKTP"
             android:exported="false"
             android:parentActivityName=".ui.main.MainActivity"
             android:theme="@style/WithActionBar" />

@@ -11,10 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import id.coolva.dasdisduk.R;
 import id.coolva.dasdisduk.databinding.FragmentHomeBinding;
-import id.coolva.dasdisduk.ui.form.RegDamagedLoseKTP;
-import id.coolva.dasdisduk.ui.form.RegNewKTP;
+import id.coolva.dasdisduk.ui.form.damagedlosektp.RegDamagedLoseKTP;
+import id.coolva.dasdisduk.ui.form.damagelosekk.RegDamagedLoseKK;
+import id.coolva.dasdisduk.ui.form.newkk.RegNewKK;
+import id.coolva.dasdisduk.ui.form.newktp.RegNewKTP;
 
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
@@ -56,6 +57,27 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), RegDamagedLoseKTP.class));
+            }
+        });
+
+        binding.cardKkBaru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), RegNewKK.class));
+            }
+        });
+
+        binding.cardKkRusak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), RegDamagedLoseKK.class));
+            }
+        });
+
+        binding.ivUserProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

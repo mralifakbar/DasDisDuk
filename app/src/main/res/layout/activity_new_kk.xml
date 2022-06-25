@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.form.damagedlosektp.RegDamagedLoseKTP"
+    tools:context=".ui.form.newkk.RegNewKK"
     android:orientation="vertical">
 
     <ScrollView
@@ -18,34 +18,16 @@
             android:padding="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_jenis_pengajuan"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Jenis Pengajuan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <AutoCompleteTextView
-                    android:padding="16dp"
-                    android:id="@+id/act_jenis_pengajuan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_tempat_lahir"
+                android:id="@+id/til_nama"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tempat Lahir"
-                android:layout_marginTop="16dp"
+                android:hint="Nama Anggota Baru"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_jenis_pengajuan">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_tempat_lahir"
+                    android:id="@+id/edt_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -56,10 +38,10 @@
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tanggal Lahir"
+                android:hint="Tanggal Lahir Anggota Baru"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_tempat_lahir">
+                app:layout_constraintTop_toBottomOf="@id/til_nama">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_tanggal_lahir"
@@ -86,33 +68,16 @@
                     android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_gol_dar"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Golongan Darah"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_jenis_kelamin">
-
-                <AutoCompleteTextView
-                    android:padding="16dp"
-                    android:id="@+id/edt_gol_dar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_alamat_jalan"
+                android:id="@+id/til_tempat_lahir"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Alamat"
+                android:hint="Tempat Lahir Anggota Baru"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/til_gol_dar">
+                app:layout_constraintTop_toBottomOf="@id/til_jenis_kelamin">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_alamat_jalan"
@@ -122,51 +87,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_rt_rw"
+                android:id="@+id/til_pendidikan"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="RT/RW"
+                android:hint="Pendidikan Anggota Baru"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/til_alamat_jalan">
+                app:layout_constraintTop_toBottomOf="@id/til_tempat_lahir">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_rt_rw"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_kel_desa"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Kelurahan/Desa"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/til_rt_rw">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_kel_desa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_kecamatan"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Kecamatan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_kel_desa">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_kecamatan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -177,32 +108,14 @@
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Agama"
+                android:hint="Agama Anggota Baru"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/til_kecamatan">
+                app:layout_constraintTop_toBottomOf="@+id/til_pendidikan">
 
                 <AutoCompleteTextView
                     android:padding="16dp"
                     android:id="@+id/act_agama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_stat_nikah"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_marginTop="16dp"
-                android:layout_height="wrap_content"
-                android:hint="Status Pernikahan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/til_agama">
-
-                <AutoCompleteTextView
-                    android:padding="16dp"
-                    android:id="@+id/stat_nikah"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none" />
@@ -214,9 +127,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:hint="Pekerjaan"
+                android:hint="Pekerjaan Anggota Baru"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_stat_nikah">
+                app:layout_constraintTop_toBottomOf="@id/til_agama">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_pekerjaan"
@@ -225,41 +138,23 @@
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="16dp"
-                android:id="@+id/til_warga_negara"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Kewarganegaraan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/til_pekerjaan">
-
-                <AutoCompleteTextView
-                    android:padding="16dp"
-                    android:id="@+id/stat_warga_negara"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_upload_kk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Foto KK"
+                android:text="Upload Foto KK Lama"
                 app:strokeColor="@color/primary_blue_brand"
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
                 style="@style/Widget.Material3.Button.OutlinedButton"
-                app:layout_constraintTop_toBottomOf="@id/til_warga_negara"
+                app:layout_constraintTop_toBottomOf="@id/til_pekerjaan"
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_upload_selfie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Foto Selfie"
+                android:text="Upload Foto Selfie Anggota Baru"
                 app:strokeColor="@color/primary_blue_brand"
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
@@ -268,10 +163,10 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_upload_surat_hilang"
+                android:id="@+id/btn_upload_buku_nikah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Surat Keterangan Hilang (Kepolisian)"
+                android:text="Upload Buku Nikah"
                 app:strokeColor="@color/primary_blue_brand"
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
@@ -288,7 +183,7 @@
                 android:layout_marginTop="8dp"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_upload_surat_hilang"/>
+                app:layout_constraintTop_toBottomOf="@id/btn_upload_buku_nikah"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_register"
