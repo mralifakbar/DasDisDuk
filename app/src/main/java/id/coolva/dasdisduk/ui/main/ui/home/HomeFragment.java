@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,6 +60,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final Users[] users = {new Users()};
+
         db.collection("users").document(firebaseUser.getUid()).get()
                         .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
@@ -65,33 +68,52 @@ public class HomeFragment extends Fragment {
                                 users[0] = documentSnapshot.toObject(Users.class);
                                 binding.tvUserName.setText(users[0].nama.toString());
 
-
+                                if (users[0].pp != "") {
+                                    Glide.with(getActivity())
+                                            .load(users[0].pp)
+                                            .into(binding.ivUserProfileImage);
+                                }
                             }
                         });
         binding.cardKtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), RegNewKTP.class));
+                if (users[0].ktpbaru != 0) {
+                    Toast.makeText(requireActivity(), "Sedang diproses!", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(getActivity(), RegNewKTP.class));
+                }
             }
         });
 
         binding.cardKtpRusak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), RegDamagedLoseKTP.class));
+                if (users[0].ktprusakhilang != 0) {
+                    Toast.makeText(requireActivity(), "Sedang diproses!", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(getActivity(), RegDamagedLoseKTP.class));
+                }
             }
         });
 
         binding.cardKkBaru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), RegNewKK.class));
+                if (users[0].kkbaru != 0) {
+                    Toast.makeText(requireActivity(), "Sedang diproses!", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(getActivity(), RegNewKK.class));
+                }
             }
         });
 
         binding.cardKkRusak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (users[0].kkrusakhilang != 0) {
+                    Toast.makeText(requireActivity(), "Sedang diproses!", Toast.LENGTH_SHORT).show();
+                }
                 startActivity(new Intent(getActivity(), RegDamagedLoseKK.class));
             }
         });

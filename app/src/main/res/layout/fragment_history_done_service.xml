@@ -42,7 +42,7 @@
                     android:id="@+id/tv_service_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pembuatan KTP Baru"
+                    android:text="Pembuatan KK Baru"
                     android:includeFontPadding="false"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -51,10 +51,10 @@
                     android:id="@+id/tv_stats_service_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status: MENUNGGU KUNJUNGAN"
+                    android:text="Status: SELESAI"
                     android:includeFontPadding="false"
                     android:layout_marginTop="2dp"
-                    android:textColor="@color/red_brand"
+                    android:textColor="@color/green"
                     android:textStyle="bold"/>
             </LinearLayout>
 

@@ -65,11 +65,11 @@
                     android:id="@+id/edt_no_kk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_upload_kk"
+                android:id="@+id/btn_upload_surat_hilang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Upload Surat Kehilangan Kepolisian"
@@ -89,7 +89,7 @@
                 android:layout_marginTop="16dp"
                 android:padding="16dp"
                 style="@style/Widget.Material3.Button.OutlinedButton"
-                app:layout_constraintTop_toBottomOf="@id/btn_upload_kk"
+                app:layout_constraintTop_toBottomOf="@id/btn_upload_surat_hilang"
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.checkbox.MaterialCheckBox

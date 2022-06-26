@@ -29,4 +29,36 @@
         <item>Laki-Laki</item>
         <item>Perempuan</item>
     </string-array>
+
+    <string-array name="goldar">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="agama">
+        <item>Islam</item>
+        <item>Hindu</item>
+        <item>Budha</item>
+        <item>Konghucu</item>
+        <item>Kristen</item>
+        <item>Katolik</item>
+    </string-array>
+
+    <string-array name="statusnikah">
+        <item>Menikah</item>
+        <item>Cerai</item>
+        <item>Lajang</item>
+    </string-array>
+
+    <string-array name="wn">
+        <item>Indonesia</item>
+        <item>Asing</item>
+    </string-array>
+
+    <string-array name="jenispengajuan">
+        <item>Hilang</item>
+        <item>Rusak</item>
+    </string-array>
 </resources>

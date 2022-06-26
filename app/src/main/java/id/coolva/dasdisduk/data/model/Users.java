@@ -5,7 +5,7 @@ public class Users {
     public String nik = "";
     public String nokk = "";
     public String nama = "";
-    public String noew = "";
+    public String nowa = "";
     public String alamat = "";
     public String provinsi = "";
     public String kabupaten = "";
