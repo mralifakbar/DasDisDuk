@@ -49,7 +49,8 @@
                 app:layout_constraintEnd_toStartOf="@+id/iv_verified_logo"
                 app:layout_constraintStart_toEndOf="@id/iv_user_profile_image"
                 app:layout_constraintTop_toTopOf="@id/iv_user_profile_image"
-                tools:text="Jamal Akhyer" />
+                tools:text="Jamal Akhyer"
+                android:text="Jamal Akhyer"/>
 
             <ImageView
                 android:visibility="invisible"
