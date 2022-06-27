@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125370986074",
+    "project_id": "dasdisduk",
+    "storage_bucket": "dasdisduk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125370986074:android:8114445a896a37b02eb263",
+        "android_client_info": {
+          "package_name": "id.coolva.dasdisduk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125370986074-dkb9ffese6af8q24itc5ffkibeh3vep7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk8DwgyXpc4jXaxpF6udVDwXm2orm90ro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125370986074-dkb9ffese6af8q24itc5ffkibeh3vep7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
