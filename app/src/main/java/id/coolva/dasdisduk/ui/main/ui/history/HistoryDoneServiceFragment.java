@@ -1,10 +1,13 @@
 package id.coolva.dasdisduk.ui.main.ui.history;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,6 +51,16 @@ public class HistoryDoneServiceFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        if (Build.VERSION.SDK_INT >= 26) {
+            ft.setReorderingAllowed(false);
+        }
+        ft.detach(this).attach(this).commit();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -83,6 +96,9 @@ public class HistoryDoneServiceFragment extends Fragment {
                                                 if (newKTP[0].selesai) {
                                                     binding.newKtpCardDone.setVisibility(View.VISIBLE);
                                                     binding.tvService1.setText("KTP Baru");
+                                                    if (newKTP[0].diterima) {
+                                                        binding.tvStatsService1.setTextColor(getResources().getColor(R.color.green));
+                                                    }
                                                     binding.tvStatsService1.setText("STATUS: " +newKTP[0].status);
                                                 }
                                             } catch (Exception e) {
@@ -105,6 +121,9 @@ public class HistoryDoneServiceFragment extends Fragment {
                                                 if (damagedLoseKtps[0].selesai) {
                                                     binding.damagedLoseKtpCardDone.setVisibility(View.VISIBLE);
                                                     binding.tvService2.setText("KTP " + damagedLoseKtps[0].jenispengajuan);
+                                                    if (damagedLoseKtps[0].diterima) {
+                                                        binding.tvStatsService2.setTextColor(getResources().getColor(R.color.green));
+                                                    }
                                                     binding.tvStatsService2.setText("STATUS: " +damagedLoseKtps[0].status);
                                                 }
                                             } catch (Exception e) {
@@ -127,6 +146,9 @@ public class HistoryDoneServiceFragment extends Fragment {
                                                 if (newKK[0].selesai) {
                                                     binding.newKkCardDone.setVisibility(View.VISIBLE);
                                                     binding.tvService3.setText("KK Baru");
+                                                    if (newKK[0].diterima) {
+                                                        binding.tvStatsService3.setTextColor(getResources().getColor(R.color.green));
+                                                    }
                                                     binding.tvStatsService3.setText("STATUS: " + newKK[0].status);
                                                 }
                                             }
@@ -150,6 +172,9 @@ public class HistoryDoneServiceFragment extends Fragment {
                                                 if (damagedLoseKK[0].selesai) {
                                                     binding.damagedLoseKkCardDone.setVisibility(View.VISIBLE);
                                                     binding.tvService4.setText("KK " + damagedLoseKK[0].jenispengajuan);
+                                                    if (damagedLoseKK[0].diterima) {
+                                                        binding.tvStatsService4.setTextColor(getResources().getColor(R.color.green));
+                                                    }
                                                     binding.tvStatsService4.setText("STATUS: " + damagedLoseKK[0].status);
                                                 }
                                             } catch (Exception e) {

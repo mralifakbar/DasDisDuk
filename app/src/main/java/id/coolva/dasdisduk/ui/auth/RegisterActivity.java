@@ -6,17 +6,21 @@ import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.Preference;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,6 +51,8 @@ import java.util.Map;
 import java.util.Random;
 
 import id.coolva.dasdisduk.R;
+import id.coolva.dasdisduk.data.preference.UserModel;
+import id.coolva.dasdisduk.data.preference.UserPreference;
 import id.coolva.dasdisduk.databinding.ActivityRegisterBinding;
 import id.coolva.dasdisduk.ui.main.MainActivity;
 
@@ -54,7 +61,8 @@ public class RegisterActivity extends AppCompatActivity {
     private ActivityRegisterBinding binding;
     private Uri selectedImageUriSelfie;
     public String selectedImageUriSelfiePath = "";
-
+    private UserModel userModel;
+    private UserPreference userPreference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -179,6 +187,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if (task.isSuccessful()) {
+
                                                 Log.d("TaskReg", "Success");
                                                 FirebaseUser firebaseUser = task.getResult().getUser();
                                                 FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -228,6 +237,11 @@ public class RegisterActivity extends AppCompatActivity {
                                                                 Toast.makeText(RegisterActivity.this, "Gagal mengirim data pendafataran", Toast.LENGTH_SHORT).show();
                                                             }
                                                         });
+
+                                                userModel = new UserModel();
+                                                userModel.setEmail(email);
+                                                userModel.setPassword(password);
+                                                userPreference.setUser(userModel);
                                             } else {
                                                 Toast.makeText(RegisterActivity.this, task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
                                             }
@@ -263,4 +277,41 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
     );
+
+    private boolean doubleBackToExit = false;
+
+    @Override
+    public void onBackPressed() {
+        Log.d("Sampe", "Sini Klik");
+        if (doubleBackToExit) {
+            Log.d("Sampe", "Sini Klik2");
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+            builder.setTitle("Keluar aplikasi");
+            builder.setMessage("Apakah yakin ingin keluar aplikasi?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yakin", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+
+        doubleBackToExit = true;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExit = false;
+            }
+        }, 2000);
+    }
 }

@@ -1,15 +1,18 @@
 package id.coolva.dasdisduk.ui.main.ui.history;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,8 +58,46 @@ public class HistoryProcessServiceFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        if (Build.VERSION.SDK_INT >= 26) {
+            ft.setReorderingAllowed(false);
+        }
+        ft.detach(this).attach(this).commit();
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.newKtpCardProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Cooming Soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.damagedLoseKtpCardProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Cooming Soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.newKkCardProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Cooming Soon", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.damagedLoseKkCardProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Cooming Soon", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         final Users[] users = {new Users()};
 
@@ -165,6 +206,6 @@ public class HistoryProcessServiceFragment extends Fragment {
 
 //
 
-
+        Log.d("Users Try", users[0].nama);
     }
 }

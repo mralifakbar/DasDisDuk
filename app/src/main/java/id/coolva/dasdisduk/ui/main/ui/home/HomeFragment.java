@@ -75,6 +75,7 @@ public class HomeFragment extends Fragment {
                                 }
                             }
                         });
+
         binding.cardKtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,8 +114,9 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 if (users[0].kkrusakhilang != 0) {
                     Toast.makeText(requireActivity(), "Sedang diproses!", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(getActivity(), RegDamagedLoseKK.class));
                 }
-                startActivity(new Intent(getActivity(), RegDamagedLoseKK.class));
             }
         });
 
