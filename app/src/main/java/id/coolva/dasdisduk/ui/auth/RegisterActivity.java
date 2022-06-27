@@ -63,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
     public String selectedImageUriSelfiePath = "";
     private UserModel userModel;
     private UserPreference userPreference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

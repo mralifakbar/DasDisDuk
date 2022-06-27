@@ -91,8 +91,14 @@ public class LoginActivity extends AppCompatActivity {
                             });
                 }
             }
-        });
 
+        });
+        binding.btnForgotPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+            }
+        });
         binding.btnToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

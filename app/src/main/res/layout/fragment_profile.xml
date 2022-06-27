@@ -33,6 +33,7 @@
                 android:src="@drawable/ic_default_profile_picture" />
 
             <ImageView
+                android:id="@+id/iv_change_photo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="bottom|end"

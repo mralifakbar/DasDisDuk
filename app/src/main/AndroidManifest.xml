@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="id.coolva.dasdisduk">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DasDisDuk"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.auth.ForgotPasswordActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.form.damagelosekk.RegDamagedLoseKK"
             android:exported="false"
