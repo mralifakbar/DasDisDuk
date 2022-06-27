@@ -179,7 +179,7 @@ public class RegNewKTP extends AppCompatActivity {
                             "https://firebasestorage.googleapis.com/v0/b/dasdisduk.appspot.com/o/" + childSelfie + "?alt=media");
 
                     db.collection("ktpbaru")
-                            .document(firebaseUser.getUid().toString() + randInt)
+                            .document(firebaseUser.getUid().toString())
                             .set(newKTPData, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

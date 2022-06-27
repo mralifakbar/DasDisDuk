@@ -194,7 +194,7 @@ public class RegNewKK extends AppCompatActivity {
                     newKKData.put("tanggalpengajuan", System.currentTimeMillis());
 
                     db.collection("kkbaru")
-                            .document(firebaseUser.getUid().toString() + randInt)
+                            .document(firebaseUser.getUid().toString())
                             .set(newKKData, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

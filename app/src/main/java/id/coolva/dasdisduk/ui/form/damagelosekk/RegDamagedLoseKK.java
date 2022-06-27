@@ -152,7 +152,7 @@ public class RegDamagedLoseKK extends AppCompatActivity {
                     newKKData.put("diterima", false);
 
                     db.collection("kkhilangrusak")
-                            .document(firebaseUser.getUid().toString() + randInt)
+                            .document(firebaseUser.getUid().toString())
                             .set(newKKData, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

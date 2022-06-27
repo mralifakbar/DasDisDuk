@@ -230,7 +230,7 @@ public class RegDamagedLoseKTP extends AppCompatActivity {
                             "https://firebasestorage.googleapis.com/v0/b/dasdisduk.appspot.com/o/" + childSuratHilang + "?alt=media");
 
                     db.collection("ktphilangrusak")
-                            .document(firebaseUser.getUid().toString() + randInt)
+                            .document(firebaseUser.getUid().toString())
                             .set(newKTPData, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -240,6 +240,8 @@ public class RegDamagedLoseKTP extends AppCompatActivity {
                                     finish();
                                 }
                             });
+
+
                 }
             }
         });

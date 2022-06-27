@@ -10,6 +10,8 @@
     android:background="@color/gray_background">
 
     <com.google.android.material.card.MaterialCardView
+        android:visibility="gone"
+        android:id="@+id/new_ktp_card_done"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +44,7 @@
                     android:id="@+id/tv_service_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pembuatan KK Baru"
+                    android:text="Pembuatan KTP Baru"
                     android:includeFontPadding="false"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -51,10 +53,10 @@
                     android:id="@+id/tv_stats_service_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status: SELESAI"
+                    android:text="Status: Pengajuan Baru"
                     android:includeFontPadding="false"
-                    android:layout_marginTop="2dp"
-                    android:textColor="@color/green"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/red_brand"
                     android:textStyle="bold"/>
             </LinearLayout>
 
@@ -65,8 +67,193 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:tint="@color/primary_blue_brand" />
+                app:tint="@color/red_brand" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:id="@+id/damaged_lose_ktp_card_done"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:backgroundTint="@color/white">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/img_ktp2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/card_ktp_rusak"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/img_ktp2"
+                app:layout_constraintTop_toTopOf="@id/img_ktp2"
+                app:layout_constraintBottom_toBottomOf="@id/img_ktp2"
+                >
+                <TextView
+                    android:id="@+id/tv_service_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KTP Rusak/Hilang"
+                    android:includeFontPadding="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_stats_service_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: MENUNGGU KUNJUNGAN"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/red_brand"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/red_brand" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:id="@+id/new_kk_card_done"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:backgroundTint="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/img_kk1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/card_kk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/img_kk1"
+                app:layout_constraintTop_toTopOf="@id/img_kk1"
+                app:layout_constraintBottom_toBottomOf="@id/img_kk1"
+                >
+                <TextView
+                    android:id="@+id/tv_service_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pembuatan KK Baru"
+                    android:includeFontPadding="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_stats_service_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: MENUNGGU KUNJUNGAN"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/red_brand"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/red_brand" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:id="@+id/damaged_lose_kk_card_done"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:backgroundTint="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/img_kk2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/card_kk_rusak"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintStart_toEndOf="@id/img_kk2"
+                app:layout_constraintTop_toTopOf="@id/img_kk2"
+                app:layout_constraintBottom_toBottomOf="@id/img_kk2"
+                >
+                <TextView
+                    android:id="@+id/tv_service_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KK Rusak/Hilang"
+                    android:includeFontPadding="false"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_stats_service_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status: MENUNGGU KUNJUNGAN"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/red_brand"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/red_brand" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
