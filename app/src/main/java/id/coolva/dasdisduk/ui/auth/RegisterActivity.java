@@ -228,6 +228,12 @@ public class RegisterActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onSuccess(Void unused) {
                                                                 Log.d("DBUSER", "Berhasil");
+                                                                userModel = new UserModel();
+                                                                userPreference = new UserPreference(RegisterActivity.this);
+                                                                userModel = userPreference.getUser();
+                                                                userModel.setEmail(email);
+                                                                userModel.setPassword(password);
+                                                                userPreference.setUser(userModel);
                                                                 Toast.makeText(RegisterActivity.this, "Anda berhasil mendaftar!", Toast.LENGTH_SHORT).show();
                                                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                                                 finish();
@@ -239,10 +245,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                             }
                                                         });
 
-                                                userModel = new UserModel();
-                                                userModel.setEmail(email);
-                                                userModel.setPassword(password);
-                                                userPreference.setUser(userModel);
+
                                             } else {
                                                 Toast.makeText(RegisterActivity.this, task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
                                             }
